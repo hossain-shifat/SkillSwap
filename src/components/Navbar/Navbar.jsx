@@ -1,21 +1,40 @@
-import { Menu } from 'lucide-react'
-import React from 'react'
+import { Menu, User } from 'lucide-react'
+import React, { use } from 'react'
 import { Link, NavLink } from 'react-router'
+import { AuthContext } from '../../context/Auth/AuthProvider/AuthProvider'
+import { toast } from 'react-toastify'
 
 const Navbar = () => {
+    const { user, logOut } = use(AuthContext)
+
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                toast.success('You logout successfully')
+            })
+    }
+
+
+
+
+
+
+
     const links =
         <div className="font-semibold grid md:flex gap-3">
             <NavLink to='/'><li>Home</li></NavLink>
             <NavLink to='/all-courses'><li>All Course</li></NavLink>
             {/* <Link to='/'><li>Home</li></Link> */}
         </div>
+
     return (
         <div>
             <div className="navbar bg-base-100 shadow md:px-10 mb-5">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost z-10 lg:hidden px-2 bg-transparent border-none shadow-none">
-                            <Menu/>
+                            <Menu />
                         </div>
                         {/* mobile view */}
                         <ul tabIndex="-1" className="menu menu-sm z-10 dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow">
@@ -34,8 +53,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex gap-2">
-                    <Link to='/login' className="btn btn-primary font-bold border-none outline-none">Login</Link>
-                    <button className="btn btn-primary font-bold border-none outline-none">SingUp</button>
+                    {
+                        user ? <div className="flex gap-2 items-center justify-center"><User className="border-3 rounded-full" size={35} /> <button onClick={handleLogOut} className="btn btn-primary outline-none border-none">Logout</button></div> : <Link to='/login' className="btn btn-primary font-bold border-none outline-none">Login</Link>
+                    }
                 </div>
             </div>
         </div>

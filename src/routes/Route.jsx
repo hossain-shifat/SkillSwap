@@ -5,6 +5,7 @@ import AllCourses from "../pages/AllCourses/AllCourses";
 import CourseDetail from "../pages/CourseDetail/CourseDetail";
 import Login from "../pages/Login/Login";
 import SingUp from "../pages/SignUp/SingUp";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -25,7 +26,7 @@ export const router = createBrowserRouter([
             {
                 path: '/course-details/:id',
                 loader: () => fetch('/data.json'),
-                Component: CourseDetail
+                element: <PrivateRoute><CourseDetail></CourseDetail></PrivateRoute>
             },
             {
                 path:'/login',
