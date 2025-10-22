@@ -3,6 +3,8 @@ import Root from "../layout/Root";
 import Home from "../pages/Home/Home";
 import AllCourses from "../pages/AllCourses/AllCourses";
 import CourseDetail from "../pages/CourseDetail/CourseDetail";
+import Login from "../pages/Login/Login";
+import SingUp from "../pages/SignUp/SingUp";
 
 
 export const router = createBrowserRouter([
@@ -24,6 +26,14 @@ export const router = createBrowserRouter([
                 path: '/course-details/:id',
                 loader: () => fetch('/data.json'),
                 Component: CourseDetail
+            },
+            {
+                path:'/login',
+                Component: Login
+            },
+            {
+                path: '/sing-up',
+                Component: SingUp
             }
         ]
     }

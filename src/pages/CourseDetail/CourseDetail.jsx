@@ -36,7 +36,7 @@ const CourseDetail = () => {
                     <button className="btn btn-secondary font-bold">Enroll Now</button>
                 </div>
             </div>
-            <div className="flex flex-col max-w-[350px] sm:max-w-[700px] md:max-w-[800px] lg:max-w-[900px] mx-auto my-10 mb-20 ">
+            <div className="flex flex-col mx-5 max-w-[350px] sm:max-w-[700px] md:max-w-[800px] md:mx-auto lg:max-w-[900px] lg:mx-auto my-10 mb-20 ">
                 <div className="my-5">
                     <h1 className="font-bold text-2xl">Course Session</h1>
                 </div>
