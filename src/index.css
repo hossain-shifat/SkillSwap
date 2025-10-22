@@ -4,7 +4,7 @@
    themes: light --default ;
    --color-primary: #3B82F6;
   --color-secondary: #020617;
-  
+
 }
 
 *{
@@ -12,7 +12,14 @@
 }
 
 
-
  .active{
     @apply border-b-2 text-secondary
  }
+
+
+ @media (max-width: 768px) {
+  .Toastify__toast {
+    width: 280px;
+    margin-top: 20px;
+  }
+}
