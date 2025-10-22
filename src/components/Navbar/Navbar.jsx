@@ -6,7 +6,7 @@ const Navbar = () => {
     const links =
         <div className="font-semibold grid md:flex gap-3">
             <NavLink to='/'><li>Home</li></NavLink>
-            <NavLink to='/all-course'><li>All Course</li></NavLink>
+            <NavLink to='/all-courses'><li>All Course</li></NavLink>
             {/* <Link to='/'><li>Home</li></Link> */}
         </div>
     return (
@@ -14,11 +14,11 @@ const Navbar = () => {
             <div className="navbar bg-base-100 shadow md:px-10 mb-5">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden px-2 bg-transparent border-none shadow-none">
+                        <div tabIndex={0} role="button" className="btn btn-ghost z-10 lg:hidden px-2 bg-transparent border-none shadow-none">
                             <Menu/>
                         </div>
                         {/* mobile view */}
-                        <ul tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <ul tabIndex="-1" className="menu menu-sm z-10 dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow">
                             {links}
                         </ul>
                     </div>
