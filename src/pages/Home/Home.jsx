@@ -1,9 +1,12 @@
 import React from 'react'
+import Carousel from '../../components/Banner/Carousel'
+import OurSuccess from '../../components/OurSuccess/OurSuccess'
 
 const Home = () => {
   return (
     <div>
-        <h1>this is home page</h1>
+        <Carousel/>
+        <OurSuccess/>
     </div>
   )
 }
