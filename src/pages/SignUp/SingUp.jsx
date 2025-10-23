@@ -1,16 +1,38 @@
 import { Eye, EyeClosed } from 'lucide-react'
-import React, { use, useContext, useState } from 'react'
+import React, { use, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../../context/Auth/AuthProvider/AuthProvider'
 import { toast } from 'react-toastify'
 
 const SingUp = () => {
     const [showPassword, setShowPassword] = useState(false)
+    const [password, setPassword] = useState('')
+    const [passwordError,setPassowrdError] = useState('')
     const { createUser, setUser, userPorfile } = use(AuthContext)
 
     const location = useLocation()
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || '/'
+
+
+    const passwordValidation = (password) =>{
+        const pattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/
+        if (!pattern.test(password)) {
+            return 'Password must be at least 6 characters, contain at least one uppercase and one lowercase letter'
+        }
+        return ''
+    }
+
+    const handlePasswordOnChange = (e) =>{
+        const pass = e.target.value
+        setPassword(pass)
+        if (!pass) {
+            setPassowrdError('')
+            return
+        }
+        const error = passwordValidation(pass)
+        setPassowrdError(error)
+    }
 
     const handleSingUp = (e) => {
         e.preventDefault()
@@ -18,13 +40,18 @@ const SingUp = () => {
         const photo = e.target.photo.value
         const email = e.target.email.value
         const password = e.target.password.value
+
+        if (passwordError) return
+
         createUser(email, password)
             .then(result => {
                 const user = result.user
+                toast.success("Account created successfully")
+                e.target.reset()
+                setPassword('')
                 userPorfile(name, photo)
                     .then(() => {
                         setUser({ ...user, displayName: name, photoURL: photo })
-                        toast.success("Account created successfully")
                         navigate(from, { replace: true })
                     })
             })
@@ -45,10 +72,10 @@ const SingUp = () => {
                         <input className="w-full p-3 rounded bg-[#eee] border border-gray-100 outline-none text-[1rem] text-[#333] my-2" type="text" name='photo' placeholder='Photo URL' />
                         <input className="w-full p-3 rounded bg-[#eee] border border-gray-100 outline-none text-[1rem] text-[#333] my-2" type="email" name='email' placeholder='Email' />
                         <div className="relative w-full">
-                            <input className="w-full p-3 rounded bg-[#eee] border border-gray-100 outline-none text-[1rem] text-[#333] my-2" type={showPassword ? 'text' : 'password'} name='password' placeholder='Password' />
+                            <input className="w-full p-3 rounded bg-[#eee] border border-gray-100 outline-none text-[1rem] text-[#333] my-2" type={showPassword ? 'text' : 'password'} onChange={handlePasswordOnChange} name='password' value={password} placeholder='Password' />
                             <span onClick={() => setShowPassword(!showPassword)} className="absolute cursor-pointer top-5 right-5">{showPassword ? <EyeClosed /> : <Eye />}</span>
                         </div>
-                        {/* <p className="text-blue-600 underline cursor-pointer">Forget Passowrd?</p> */}
+                        {passwordError && (<p className="text-red-600 select-none">{passwordError}</p>)}
                         <button className="btn btn-primary font-bold text-white w-full mt-5 border-none outline-none">Sing Up</button>
                         <p className="mt-2">Already Have an Account? <Link to='/login' className="underline text-blue-600">Login</Link></p>
                     </form>

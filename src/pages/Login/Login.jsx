@@ -1,12 +1,13 @@
 import { Eye, EyeClosed } from 'lucide-react'
-import React, { use, useState } from 'react'
+import React, { use, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../../context/Auth/AuthProvider/AuthProvider'
 import { toast } from 'react-toastify'
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
-    const { loginUser, setUser, googleSingIn } = use(AuthContext)
+    const { loginUser, setUser, googleSingIn, forgetPassword } = use(AuthContext)
+    const emailRef = useRef()
 
     const location = useLocation()
     const navigate = useNavigate()
@@ -20,6 +21,7 @@ const Login = () => {
             .then(result => {
                 setUser(result.user)
                 navigate(from, { replace: true })
+                e.target.reset()
             })
             .catch(error => {
                 if (error.code === 'auth/invalid-credential') {
@@ -42,6 +44,13 @@ const Login = () => {
             })
     }
 
+    const handleResetEmail = () => {
+        navigate('/forget-password', {
+            state: { email: document.querySelector("input[name='email']").value },
+        })
+    }
+
+
 
 
     return (
@@ -50,12 +59,12 @@ const Login = () => {
                 <div className="w-full max-w-[450px] p-7 border border-gray-100 rounded-xl shadow-sm bg-white">
                     <form onSubmit={handleLogin}>
                         <h1 className="text-2xl font-bold text-center mb-5">Login</h1>
-                        <input className="w-full p-3 rounded bg-[#eee] border border-gray-100 outline-none text-[1rem] text-[#333] my-2" type="email" name='email' placeholder='Email' />
+                        <input className="w-full p-3 rounded bg-[#eee] border border-gray-100 outline-none text-[1rem] text-[#333] my-2" type="email" name='email' ref={emailRef} placeholder='Email' />
                         <span className="relative w-full">
                             <input className="w-full p-3 rounded bg-[#eee] border border-gray-100 outline-none text-[1rem] text-[#333] my-2" type={showPassword ? 'text' : 'password'} name='password' placeholder='Password' />
                             <span onClick={() => setShowPassword(!showPassword)} className="absolute cursor-pointer top-0 bottom-0 right-5">{showPassword ? <EyeClosed /> : <Eye />}</span>
                         </span>
-                        <p className="text-blue-600 underline cursor-pointer">Forget Passowrd?</p>
+                        <p onClick={handleResetEmail} className="text-blue-600 underline cursor-pointer">Forget Passowrd?</p>
                         <button className="btn btn-primary font-bold text-white w-full border-none outline-none mt-5">Login</button>
                         <p className="mt-2">Don't Have an Account <Link to='/sing-up' className="underline text-blue-600">SingUp</Link></p>
                     </form>

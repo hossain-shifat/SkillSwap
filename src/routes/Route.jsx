@@ -6,6 +6,7 @@ import CourseDetail from "../pages/CourseDetail/CourseDetail";
 import Login from "../pages/Login/Login";
 import SingUp from "../pages/SignUp/SingUp";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+import ForgetPassword from "../pages/ForgetPassword/ForgetPassword";
 
 
 export const router = createBrowserRouter([
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
             {
                 path: '/sing-up',
                 Component: SingUp
+            },
+            {
+                path: '/forget-password',
+                Component: ForgetPassword
             }
         ]
     }

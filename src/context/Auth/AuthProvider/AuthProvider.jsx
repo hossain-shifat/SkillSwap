@@ -1,8 +1,7 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import React, { useEffect, useState } from 'react'
 import { createContext } from "react";
 import { auth } from '../../../firebase/firebase.init';
-import { UNSAFE_createClientRoutesWithHMRRevalidationOptOut } from 'react-router';
 
 
 export const AuthContext = createContext()
@@ -31,7 +30,11 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider)
     }
 
+    const forgetPassword = (email) => {
+        return sendPasswordResetEmail(auth, email)
+    }
 
+    // update user profile
     const userPorfile = (name, photoURL) => {
         updateProfile(auth.currentUser, {
             displayName: name,
@@ -56,6 +59,7 @@ const AuthProvider = ({ children }) => {
         loginUser,
         googleSingIn,
         userPorfile,
+        forgetPassword,
         logOut,
         loading,
         setLoading,
