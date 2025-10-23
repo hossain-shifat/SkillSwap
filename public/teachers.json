@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "name": "Jhankar Mahbub",
+        "profile": "https://i.ibb.co/v4QcM2YL/jhunker-mahabub.jpg",
+        "description": "Senior web developer and founder of Programming Hero, inspiring learners with project-based lessons.",
+        "education": "B.Sc. in Computer Science, University of Dhaka",
+        "skills": [
+            "JavaScript",
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Next.js"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Sara Hossain",
+        "profile": "https://i.ibb.co/MDjMKxLv/head-shot-profile-portrait-blonde-businesswoman-modern-office-head-shot-profile-portrait-young-happy.jpg",
+        "description": "Passionate UI/UX designer creating user-friendly digital experiences.",
+        "education": "B.Des in Graphic Design, BRAC University",
+        "skills": [
+            "UI/UX Design",
+            "Figma",
+            "Adobe XD",
+            "Prototyping",
+            "Design Thinking"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Rafi Ahmed",
+        "profile": "https://i.ibb.co/YH2mJY0/premium-photo-1689568126014-06fea9d5d341.jpg",
+        "description": "Full-stack web developer building responsive applications with the MERN stack.",
+        "education": "B.Sc. in Software Engineering, North South University",
+        "skills": [
+            "React",
+            "Express.js",
+            "MongoDB",
+            "Tailwind CSS",
+            "Firebase"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Emily Chowdhury",
+        "profile": "https://i.ibb.co/Q3FTGs6F/download.jpg",
+        "description": "Data analyst specializing in visualization and storytelling with data.",
+        "education": "M.Sc. in Data Science, University of Toronto",
+        "skills": [
+            "Python",
+            "Pandas",
+            "Power BI",
+            "Data Visualization",
+            "SQL"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "John Peterson",
+        "profile": "https://i.ibb.co/YH2mJY0/premium-photo-1689568126014-06fea9d5d341.jpg",
+        "description": "Backend engineer creating secure and scalable server-side systems.",
+        "education": "M.Sc. in Computer Science, Stanford University",
+        "skills": [
+            "Node.js",
+            "Express",
+            "PostgreSQL",
+            "Docker",
+            "API Design"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Mehnaz Rahman",
+        "profile": "https://i.ibb.co/MDjMKxLv/head-shot-profile-portrait-blonde-businesswoman-modern-office-head-shot-profile-portrait-young-happy.jpg",
+        "description": "Mobile app developer delivering smooth experiences with Flutter and Dart.",
+        "education": "B.Sc. in Computer Engineering, AUST",
+        "skills": [
+            "Flutter",
+            "Dart",
+            "Firebase",
+            "UI Animation",
+            "REST API"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Tanvir Islam",
+        "profile": "https://i.ibb.co/YH2mJY0/premium-photo-1689568126014-06fea9d5d341.jpg",
+        "description": "Cybersecurity specialist with expertise in ethical hacking and digital forensics.",
+        "education": "B.Sc. in Cyber Security, AIUB",
+        "skills": [
+            "Ethical Hacking",
+            "Kali Linux",
+            "Network Security",
+            "Python",
+            "Penetration Testing"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Sophia Karim",
+        "profile": "https://i.ibb.co/Q3FTGs6F/download.jpg",
+        "description": "Front-end developer turning designs into functional websites.",
+        "education": "B.Sc. in Computer Science, ULAB",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Bootstrap"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Liam Rahman",
+        "profile": "https://i.ibb.co/YH2mJY0/premium-photo-1689568126014-06fea9d5d341.jpg",
+        "description": "Machine learning engineer focused on AI-driven solutions for real problems.",
+        "education": "M.Sc. in Artificial Intelligence, University of Melbourne",
+        "skills": [
+            "Python",
+            "TensorFlow",
+            "Scikit-learn",
+            "NLP",
+            "Computer Vision"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Nusrat Jahan",
+        "profile": "https://i.ibb.co/MDjMKxLv/head-shot-profile-portrait-blonde-businesswoman-modern-office-head-shot-profile-portrait-young-happy.jpg",
+        "description": "Digital marketing strategist helping brands grow through data-driven campaigns.",
+        "education": "MBA in Marketing, University of Dhaka",
+        "skills": [
+            "SEO",
+            "Google Ads",
+            "Social Media Marketing",
+            "Content Strategy",
+            "Analytics"
+        ]
+    }
+]

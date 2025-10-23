@@ -27,10 +27,12 @@ const AuthProvider = ({ children }) => {
 
     // google login
     const googleSingIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
 
     const forgetPassword = (email) => {
+        setLoading(true)
         return sendPasswordResetEmail(auth, email)
     }
 
