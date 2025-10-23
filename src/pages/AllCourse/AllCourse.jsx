@@ -8,7 +8,7 @@ const AllCourse = ({ course }) => {
         <div>
             <div className="border border-gray-100 shadow-sm max-w-screen rounded-xl mx-3 lg:mx-0 p-4 overflow-hidden">
                 <div>
-                    <img className="w-full h-50 md:w-[400px] lg:w-[500px] object-cover rounded-xl border border-gray-100 shadow-sm mx-auto" src={course.image} alt="" />
+                    <img className="w-full h-40 object-cover rounded-xl border border-gray-100 shadow-sm" src={course.image} alt="" />
                 </div>
                 <div className="px-1 mt-5 flex flex-col">
                     <div>

@@ -1,8 +1,10 @@
 import React from 'react'
-import Carousel from '../../components/Banner/Carousel'
+
 import OurSuccess from '../../components/OurSuccess/OurSuccess'
 import Popular from '../../components/Popular/Popular'
 import TopRatedProviders from '../../components/TopRatedProviders/TopRatedProviders'
+import HowItWorks from '../../components/HowItWorks/HowItWorks'
+import Carousel from '../../components/Banner/Carousel'
 
 const Home = () => {
   return (
@@ -11,6 +13,7 @@ const Home = () => {
         <OurSuccess/>
         <Popular/>
         <TopRatedProviders/>
+        <HowItWorks/>
     </div>
   )
 }

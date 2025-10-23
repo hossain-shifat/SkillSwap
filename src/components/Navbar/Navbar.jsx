@@ -17,10 +17,6 @@ const Navbar = () => {
 
 
 
-
-
-
-
     const links =
         <div className="font-semibold grid md:flex gap-3">
             <NavLink to='/'><li>Home</li></NavLink>
@@ -54,7 +50,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end flex gap-2">
                     {
-                        user ? <div className="flex gap-4 items-center justify-center"> {user ? <img className="w-[40px] h-[40px] object-cover rounded-full cursor-pointer" src={user.photoURL} alt={user.displayName} title={user.displayName} /> : <User className="border-3 rounded-full" size={35} />} <button onClick={handleLogOut} className="btn btn-primary bg-transparent border font-bold border-red-600 text-red-600 shadow-none">Logout</button></div> : <Link to='/login' className="btn btn-primary font-bold border-none outline-none">Login</Link>
+                        user ? <div className="flex gap-4 items-center justify-center"> {user ? <img className="w-10 h-10 object-cover rounded-full cursor-pointer" src={user.photoURL} alt={user.displayName} title={user.displayName} /> : <User className="border-3 rounded-full" size={35} />} <button onClick={handleLogOut} className="btn btn-primary bg-transparent border font-bold border-red-600 text-red-600 shadow-none">Logout</button></div> : <Link to='/login' className="btn btn-primary font-bold border-none outline-none">Login</Link>
                     }
                 </div>
             </div>
