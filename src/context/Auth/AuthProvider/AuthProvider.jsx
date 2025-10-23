@@ -1,10 +1,13 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import React, { useEffect, useState } from 'react'
 import { createContext } from "react";
 import { auth } from '../../../firebase/firebase.init';
+import { UNSAFE_createClientRoutesWithHMRRevalidationOptOut } from 'react-router';
 
 
 export const AuthContext = createContext()
+
+const googleProvider = new GoogleAuthProvider()
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
@@ -23,11 +26,23 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+    // google login
+    const googleSingIn = () => {
+        return signInWithPopup(auth, googleProvider)
+    }
+
+
+    const userPorfile = (name, photoURL) => {
+        updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photoURL,
+        })
+    }
 
 
     // logout
 
-    const logOut = ()=>{
+    const logOut = () => {
         return signOut(auth)
     }
 
@@ -39,22 +54,23 @@ const AuthProvider = ({ children }) => {
         setUser,
         createUser,
         loginUser,
+        googleSingIn,
+        userPorfile,
         logOut,
         loading,
         setLoading,
-
     }
 
 
     useEffect(() => {
-            const unsubscribed = onAuthStateChanged(auth, (currentUser) => {
-                setUser(currentUser)
-                setLoading(false)
-            })
-            return () => {
-                unsubscribed()
-            }
-        }, [])
+        const unsubscribed = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser)
+            setLoading(false)
+        })
+        return () => {
+            unsubscribed()
+        }
+    }, [])
 
     return <AuthContext value={authData}>
         {children}

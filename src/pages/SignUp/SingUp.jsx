@@ -1,21 +1,32 @@
 import { Eye, EyeClosed } from 'lucide-react'
 import React, { use, useContext, useState } from 'react'
-import { Link } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../../context/Auth/AuthProvider/AuthProvider'
 import { toast } from 'react-toastify'
 
 const SingUp = () => {
     const [showPassword, setShowPassword] = useState(false)
-    const { createUser, setUser } = use(AuthContext)
+    const { createUser, setUser, userPorfile } = use(AuthContext)
+
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/'
 
     const handleSingUp = (e) => {
         e.preventDefault()
+        const name = e.target.name.value
+        const photo = e.target.photo.value
         const email = e.target.email.value
         const password = e.target.password.value
         createUser(email, password)
             .then(result => {
-                setUser(result.user)
-                toast.success("Account created successfully")
+                const user = result.user
+                userPorfile(name, photo)
+                    .then(() => {
+                        setUser({ ...user, displayName: name, photoURL: photo })
+                        toast.success("Account created successfully")
+                        navigate(from, { replace: true })
+                    })
             })
             .catch(error => {
                 if (error.code === "auth/email-already-in-use") {
