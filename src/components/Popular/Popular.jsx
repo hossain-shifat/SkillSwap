@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AllCourse from '../../pages/AllCourse/AllCourse'
+import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router'
 
 const Popular = () => {
     const [populer, setPopuler] = useState([])
@@ -22,6 +24,9 @@ const Popular = () => {
                 {
                     populer.map(course => <AllCourse key={course.skillId} course={course} />)
                 }
+            </div>
+            <div className="flex justify-end px-4">
+                <Link to='/all-courses' className="font-medium text-blue-600 cursor-pointer flex justify-center items-center">See More <ArrowRight size={18}/></Link>
             </div>
         </div>
     )
