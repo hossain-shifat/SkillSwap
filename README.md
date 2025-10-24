@@ -10,7 +10,7 @@ The platform is a **single-page application (SPA)** with a minimalist design and
 ---
 
 ## Live Demo
-🔗 [View Live Site](YOUR_LIVE_SITE_URL_HERE)
+🔗 [View Live Site](https://skillswap-fbf5f.web.app)
 
 ---
 
