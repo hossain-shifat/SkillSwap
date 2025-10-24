@@ -1,16 +1,103 @@
-# React + Vite
+# SkillSwap – A Local Skill Exchange Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Demo: ![SkillSwap Banner](./public/logo.png)
 
-Currently, two official plugins are available:
+## Project Overview
+SkillSwap is a **local skill exchange platform** that enables individuals to offer, learn, and trade skills within their community. Users can browse skill listings, view details, book sessions, and connect with skill providers.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The platform is a **single-page application (SPA)** with a minimalist design and smooth animations.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Live Demo
+🔗 [View Live Site](YOUR_LIVE_SITE_URL_HERE)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+- **Authentication:** Email/password login, Google login, Forgot Password.
+- **Protected Routes:** Skill details page accessible only to logged-in users.
+- **Skill Listings:** Cards generated from `public/data.json`. Each card shows:
+  - Skill name, image, price, rating, “View Details” button.
+- **Skill Details Page:** Shows all skill info with a booking form and toast notification.
+- **Profile Management:** Users can view and update profile info (name & photo).
+- **Responsive Design:** Works on mobile, tablet, and desktop.
+- **Animations:** Hero sliders and component animations using Framer Motion and Swiper.js.
+- **Extra Homepage Section:** “Our Success Stories” showcasing top providers.
+
+---
+
+## Folder Structure
+```
+├── assets/ # Images & assets
+├── components/ # Reusable components (Navbar, Footer, Popular, etc.)
+├── context/ # Auth context provider
+├── firebase/ # Firebase configuration
+├── layout/ # Root layout (Navbar + Footer wrapper)
+├── pages/ # Route pages (Home, Login, SignUp, Profile, CourseDetail, etc.)
+├── routes/ # React Router setup
+├── App.jsx # Main app component
+├── main.jsx # Entry point
+└── index.css # Global styles
+public/
+├── data.json # Skill listings
+├── teachers.json # Top-rated providers data
+└── logo.png # Site logo
+```
+
+---
+
+## Installation & Setup
+1. Clone the repository:
+```bash
+git clone https://github.com/hossain-shifat/SkillSwap.git
+cd Assignment-09
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+3. Create `.env.local` file and add Firebase config:
+
+ ```bash
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+4. Run development server:
+```bash
+npm run dev
+```
+## Technologies & Packages Used
+
+* React.js – Frontend library
+
+* Tailwind CSS – Utility-first CSS framework
+
+* Firebase – Authentication backend
+
+* Framer Motion – Animations
+
+* React-Toastify – Toast notifications
+
+* Swiper.js – Hero slider
+
+* DaisyUI – UI components
+
+* Vite – Development and build tool
+
+
+## Future Enhancements
+
+* Add real backend for bookings.
+
+* Email verification for new users.
+
+* Review & rating system for skill providers.
+
+* Multi-language support.
