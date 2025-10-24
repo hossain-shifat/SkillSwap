@@ -9,12 +9,14 @@ import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import ForgetPassword from "../pages/ForgetPassword/ForgetPassword";
 import UserProfile from "../pages/UserProfile/UserProfile";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
 export const router = createBrowserRouter([
     {
         path: '/',
         Component: Root,
+        errorElement:<ErrorPage/>,
         children:[
             {
                 index: true,

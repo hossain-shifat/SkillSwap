@@ -21,6 +21,7 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 setUser(result.user)
+                toast.success('Login Successfull')
                 navigate(from, { replace: true })
                 e.target.reset()
             })
