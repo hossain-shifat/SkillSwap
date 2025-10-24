@@ -1,6 +1,6 @@
 # SkillSwap – A Local Skill Exchange Platform
 
-Live Demo: ![SkillSwap Banner](./public/logo.png)
+![SkillSwap Banner](./public/banner_2.jpg)
 
 ## Project Overview
 SkillSwap is a **local skill exchange platform** that enables individuals to offer, learn, and trade skills within their community. Users can browse skill listings, view details, book sessions, and connect with skill providers.

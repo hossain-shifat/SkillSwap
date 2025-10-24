@@ -20,7 +20,6 @@ const Login = () => {
         const password = e.target.password.value
         loginUser(email, password)
             .then(result => {
-                console.log(result.user)
                 setUser(result.user)
                 navigate(from, { replace: true })
                 e.target.reset()
