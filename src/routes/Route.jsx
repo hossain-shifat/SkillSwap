@@ -7,6 +7,8 @@ import Login from "../pages/Login/Login";
 import SingUp from "../pages/SignUp/SingUp";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import ForgetPassword from "../pages/ForgetPassword/ForgetPassword";
+import UserProfile from "../pages/UserProfile/UserProfile";
+import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 
 
 export const router = createBrowserRouter([
@@ -40,6 +42,14 @@ export const router = createBrowserRouter([
             {
                 path: '/forget-password',
                 Component: ForgetPassword
+            },
+            {
+                path: '/user-profile',
+                element: <PrivateRoute><UserProfile/></PrivateRoute>
+            },
+            {
+                path: '/update-profile',
+                element: <PrivateRoute><UpdateProfile/></PrivateRoute>
             }
         ]
     }

@@ -5,7 +5,6 @@ import "swiper/css";
 import { assets } from "../../assets/assets";
 
 const Carousel = () => {
-
     return (
         <div className="w-full max-w-[1200px] mx-auto px-4">
             <Swiper modules={[Autoplay]} spaceBetween={0} slidesPerView={1} loop={true} autoplay={{ delay: 3000 }}>

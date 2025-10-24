@@ -24,8 +24,9 @@ const CourseDetail = () => {
                     <h1 className="font-bold text-2xl">{singleCourse.skillName}</h1>
                     <h1>By <span className="font-semibold">{singleCourse.providerName}</span></h1>
                 </div>
-                <div className="my-4 flex justify-between">
-                    <h1 className="font-semibold text-xl">Price: <span className="text-green-500">${singleCourse.price}</span></h1>
+                <div className="my-4 flex flex-col sm:flex-row gap-2 justify-between">
+                    <h1 className="font-semibold text-xl">Price: <span className="text-green-500">$ {singleCourse.price} <span className="text-black">/</span> <span className="text-gray-500 font-light line-through">{singleCourse.price + singleCourse.price * 50 / 100} </span> <span className="pl-2 font-light"> -50% </span></span></h1>
+                    <h1 className="font-semibold text-xl">Category: <span className="text-yellow-500">{singleCourse.category}</span></h1>
                     <h2 className="font-semibold text-xl">Seat Available: <span className="text-red-500">{singleCourse.slotsAvailable}</span></h2>
                 </div>
                 <div>

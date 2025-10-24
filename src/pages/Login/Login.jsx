@@ -19,13 +19,14 @@ const Login = () => {
         const password = e.target.password.value
         loginUser(email, password)
             .then(result => {
+                console.log(result.user)
                 setUser(result.user)
                 navigate(from, { replace: true })
                 e.target.reset()
             })
             .catch(error => {
                 if (error.code === 'auth/invalid-credential') {
-                    toast.error('Ivalid email or password')
+                    toast.error('Invalid email or password')
                 }
             })
     }

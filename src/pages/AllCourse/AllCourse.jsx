@@ -12,8 +12,8 @@ const AllCourse = ({ course }) => {
                 </div>
                 <div className="px-1 mt-5 flex flex-col">
                     <div>
-                        <h1 className="font-semibold text-lg md:text-xl line-clamp-2 leading-tight  overflow-hidden text-ellipsis whitespace-nowrap" title={course.skillName}>{course.skillName}</h1>
-                        <p className="text-gray-500 text-sm">By <span>{course.providerName}</span></p>
+                        <h1 className="font-semibold text-lg md:text-xl line-clamp-2 leading-tight overflow-hidden text-ellipsis whitespace-nowrap" title={course.skillName}>{course.skillName}</h1>
+                        <p className="text-gray-500 text-sm">By <span className="font-semibold">{course.providerName}</span></p>
                     </div>
                     <div className="my-3 flex gap-2 w-fit px-2 bg-lime-100 rounded-full">
                         <div className="flex gap-1 justify-center items-center">
