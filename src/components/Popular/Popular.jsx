@@ -20,7 +20,7 @@ const Popular = () => {
             <div className="mt-20">
                 <h1 className="text-2xl text-center font-bold">Popular Skills</h1>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-[1200px] mx-auto my-10">
+            <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-[1200px] mx-auto my-10">
                 {
                     populer.map(course => <AllCourse key={course.skillId} course={course} />)
                 }
