@@ -33,8 +33,8 @@ const CourseDetail = () => {
                             <h1>By <span className="font-semibold">{singleCourse.providerName}</span></h1>
                         </motion.div>
                     </div>
-                    <div className="my-4 flex flex-col sm:flex-row gap-2 justify-between">
-                        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }} className="pb-2 border-gray-300">
+                    <div>
+                        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }} className="pb-2 border-gray-300 my-4 flex flex-col sm:flex-row gap-2 justify-between">
                             <h1 className="font-semibold text-xl">Price: <span className="text-green-500">$ {singleCourse.price} <span className="text-black">/</span> <span className="text-gray-500 font-light line-through">{singleCourse.price + singleCourse.price * 50 / 100} </span> <span className="pl-2 font-light"> -50% </span></span></h1>
                             <h1 className="font-semibold text-xl">Category: <span className="text-yellow-500">{singleCourse.category}</span></h1>
                             <h2 className="font-semibold text-xl">Seat Available: <span className="text-red-500">{singleCourse.slotsAvailable}</span></h2>
