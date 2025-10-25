@@ -54,7 +54,7 @@ const Navbar = () => {
                         user ?
                             <div className="flex gap-4 items-center justify-center">
                                 <div className="relative group">
-                                    <img className="w-10 h-10 object-cover rounded-full cursor-pointer" src={user.photoURL} alt={user.displayName} title={user.displayName} />
+                                    <img className="w-10 h-10 object-cover rounded-full cursor-pointer" src={user.photoURL}/>
                                     <div className="absolute top-12 transform  z-20 px-2 py-2 bg-gray-300 text-white text-xs rounded opacity-0 group-hover:opacity-100 whitespace-nowrap overflow-hidden text-ellipsis transition-opacity">
                                         {user.displayName}
                                     </div>
