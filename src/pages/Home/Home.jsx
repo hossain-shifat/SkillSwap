@@ -6,6 +6,7 @@ import TopRatedProviders from '../../components/TopRatedProviders/TopRatedProvid
 import HowItWorks from '../../components/HowItWorks/HowItWorks'
 import Carousel from '../../components/Banner/Carousel'
 import { motion } from 'framer-motion'
+import AppDownload from '../../components/AppDownload/AppDownload'
 
 const Home = () => {
     return (
@@ -13,9 +14,7 @@ const Home = () => {
             <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.4 }}>
                 <Carousel />
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.4 }}>
-                <OurSuccess />
-            </motion.div>
+
             <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.4 }}>
                 <Popular />
             </motion.div>
@@ -24,6 +23,12 @@ const Home = () => {
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.4 }}>
                 <HowItWorks />
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.4 }}>
+                <OurSuccess />
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.4 }}>
+                <AppDownload />
             </motion.div>
         </div>
     )
