@@ -18,7 +18,7 @@ const UserProfile = () => {
                             <h1 className="text-2xl font-bold text-center mb-5">My Profile</h1>
                         </div>
                         <div className="my-5">
-                            <img className="w-20 h-20 object-cover rounded-full mx-auto" src={user.photoURL} alt="" />
+                            <img className="w-20 h-20 object-cover border-3 border-green-600 rounded-full mx-auto" src={user.photoURL} alt="" />
                         </div>
                         <div className="flex flex-col gap-5">
                             <div className="flex justify-between">

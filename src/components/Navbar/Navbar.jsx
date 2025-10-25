@@ -1,4 +1,4 @@
-import { Menu, User } from 'lucide-react'
+import { Edit2, Menu, UserPen, UserRoundPen } from 'lucide-react'
 import React, { use } from 'react'
 import { Link, NavLink } from 'react-router'
 import { AuthContext } from '../../context/Auth/AuthProvider/AuthProvider'
@@ -50,7 +50,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end flex gap-2">
                     {
-                        user ? <div className="flex gap-4 items-center justify-center"> {user ? <Link to='/user-profile'><img className="w-10 h-10 object-cover rounded-full cursor-pointer" src={user.photoURL} alt={user.displayName} title={user.displayName} /></Link> : <User className="border-3 rounded-full" size={35} />} <button onClick={handleLogOut} className="btn btn-primary bg-transparent border font-bold border-red-600 text-red-600 shadow-none">Logout</button></div> : <Link to='/login' className="btn btn-primary font-bold border-none outline-none">Login</Link>
+                        user ? <div className="flex gap-4 items-center justify-center"> {user ? <div className="relative group"> <img className="w-10 h-10 object-cover rounded-full cursor-pointer" src={user.photoURL} alt={user.displayName} title={user.displayName} /><div className="absolute top-12 transform -translate-x-1/2 z-20 px-2 py-2 bg-gray-300 text-white text-xs rounded opacity-0 group-hover:opacity-100 whitespace-nowrap overflow-hidden text-ellipsis transition-opacity">{user.displayName}</div> <Link to='/user-profile'><div className="absolute inset-0 w-10 h-10 bg-gray-300 opacity-0 cursor-pointer rounded-full flex justify-center items-center group-hover:opacity-60 transition-opacity"><UserRoundPen stroke='white'/> </div></Link> </div> : <User className="border-3 rounded-full" size={35} />} <button onClick={handleLogOut} className="btn btn-primary bg-transparent border font-bold border-red-600 text-red-600 shadow-none">Logout</button></div> : <div><Link to='/login' className="btn btn-primary font-bold border-none outline-none">Login</Link> <Link to='/sing-up' className="btn btn-primary font-bold border-none outline-none">SingUp</Link></div>
                     }
                 </div>
             </div>

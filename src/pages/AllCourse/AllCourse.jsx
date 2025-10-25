@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 const AllCourse = ({ course }) => {
 
     return (
-        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.1 }} whileHover={{ scale: 1.05, y: -5, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)"}}>
+        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2 }} whileHover={{ scale: 1.05, y: -5, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)"}}>
             <div>
                 <div className="border border-gray-100 shadow-sm max-w-screen rounded-xl mx-3 lg:mx-0 p-4 overflow-hidden">
                     <div>
